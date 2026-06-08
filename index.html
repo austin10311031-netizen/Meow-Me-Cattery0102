@@ -19,6 +19,28 @@
       document.documentElement.dataset.page = new URLSearchParams(window.location.search).get("page") || "home";
     </script>
     <link rel="stylesheet" href="styles.css" />
+    <style>
+      .product-card {
+        min-height: 0;
+      }
+
+      .product-image {
+        display: grid;
+        place-items: center;
+        aspect-ratio: 1;
+        overflow: hidden;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: #fffaf8;
+      }
+
+      .product-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        padding: 12px;
+      }
+    </style>
     <script src="script.js" defer></script>
     <script type="application/ld+json">
       {
@@ -681,72 +703,68 @@
         <div class="section-inner shop-layout">
           <div class="product-grid" aria-label="可選購商品">
             <article class="product-card">
-              <span class="product-type">Cat Food</span>
-              <h3>暹羅幼貓成長貓糧</h3>
-              <p>2KG · 測試商品資料</p>
-              <strong>$328</strong>
-              <button type="button" class="button product-button" data-add-product data-name="暹羅幼貓成長貓糧 2KG" data-price="328">
+              <div class="product-image">
+                <img src="assets/products/dogcatstar-probiotics.jpg" alt="汪喵腸胃益生菌一盒30包" loading="lazy" />
+              </div>
+              <span class="product-type">汪喵星球</span>
+              <h3>汪喵 - 腸胃益生菌</h3>
+              <p>一盒30包 · 建議看門口，貓貓肚痾時用</p>
+              <strong>$169</strong>
+              <button type="button" class="button product-button" data-add-product data-name="汪喵 - 腸胃益生菌 一盒30包" data-price="169">
                 <svg><use href="#icon-plus" /></svg>
                 加入購物車
               </button>
             </article>
             <article class="product-card">
-              <span class="product-type">Cat Food</span>
-              <h3>成貓日常配方貓糧</h3>
-              <p>2KG · 測試商品資料</p>
-              <strong>$298</strong>
-              <button type="button" class="button product-button" data-add-product data-name="成貓日常配方貓糧 2KG" data-price="298">
+              <div class="product-image">
+                <img src="assets/products/dogcatstar-immune.png" alt="汪喵提升免疫力粉" loading="lazy" />
+              </div>
+              <span class="product-type">汪喵星球</span>
+              <h3>汪喵 - 提升免疫力粉</h3>
+              <p>適合幼/老貓/體質虛弱，健康貓日常營養補充</p>
+              <strong>$210</strong>
+              <button type="button" class="button product-button" data-add-product data-name="汪喵 - 提升免疫力粉" data-price="210">
                 <svg><use href="#icon-plus" /></svg>
                 加入購物車
               </button>
             </article>
             <article class="product-card">
-              <span class="product-type">Cat Litter</span>
-              <h3>低塵豆腐貓砂</h3>
-              <p>6L · 測試商品資料</p>
-              <strong>$88</strong>
-              <button type="button" class="button product-button" data-add-product data-name="低塵豆腐貓砂 6L" data-price="88">
+              <div class="product-image">
+                <img src="assets/products/dogcatstar-taurine.jpg" alt="汪喵牛磺酸重要營養" loading="lazy" />
+              </div>
+              <span class="product-type">汪喵星球</span>
+              <h3>汪喵 - 牛磺酸（重要營養）</h3>
+              <p>自身無法產生，需要補充；視網膜、腦部、心臟與神經系統保健</p>
+              <strong>$78</strong>
+              <button type="button" class="button product-button" data-add-product data-name="汪喵 - 牛磺酸（重要營養）" data-price="78">
                 <svg><use href="#icon-plus" /></svg>
                 加入購物車
               </button>
             </article>
             <article class="product-card">
-              <span class="product-type">Cat Litter</span>
-              <h3>混合除臭貓砂</h3>
-              <p>7L · 測試商品資料</p>
-              <strong>$98</strong>
-              <button type="button" class="button product-button" data-add-product data-name="混合除臭貓砂 7L" data-price="98">
+              <div class="product-image">
+                <img src="assets/products/dogcatstar-catsoup.jpg" alt="貓罐頭綜合口味一箱24罐" loading="lazy" />
+              </div>
+              <span class="product-type">貓罐頭</span>
+              <h3>貓罐頭 - 綜合口味</h3>
+              <p>一箱24罐</p>
+              <strong>$318</strong>
+              <button type="button" class="button product-button" data-add-product data-name="貓罐頭 - 綜合口味 一箱24罐" data-price="318">
                 <svg><use href="#icon-plus" /></svg>
                 加入購物車
               </button>
             </article>
             <article class="product-card">
-              <span class="product-type">Daily Care</span>
-              <h3>日常潔耳護理液</h3>
-              <p>120ML · 測試商品資料</p>
-              <strong>$128</strong>
-              <button type="button" class="button product-button" data-add-product data-name="日常潔耳護理液 120ML" data-price="128">
+              <div class="product-image">
+                <img src="assets/products/brabanconne-kitten.png" alt="Brabanconne幼貓雞肉味2.5kg" loading="lazy" />
+              </div>
+              <span class="product-type">Brabanconne</span>
+              <h3>Brabanconne 幼貓雞肉味</h3>
+              <p>2.5kg</p>
+              <strong>$220</strong>
+              <button type="button" class="button product-button" data-add-product data-name="Brabanconne 幼貓雞肉味 2.5kg" data-price="220">
                 <svg><use href="#icon-plus" /></svg>
                 加入購物車
-              </button>
-            </article>
-            <article class="product-card">
-              <span class="product-type">Toys</span>
-              <h3>互動逗貓棒套裝</h3>
-              <p>1 SET · 測試商品資料</p>
-              <strong>$68</strong>
-              <button type="button" class="button product-button" data-add-product data-name="互動逗貓棒套裝 1 SET" data-price="68">
-                <svg><use href="#icon-plus" /></svg>
-                加入購物車
-              </button>
-            </article>
-            <article class="product-card is-coming-soon">
-              <span class="product-type">Parent Only</span>
-              <h3>家長專屬商品</h3>
-              <p>部分商品將只開放予 Meow Me 家長查閱及購買。</p>
-              <strong>Coming Soon</strong>
-              <button type="button" class="button product-button" disabled>
-                即將上架
               </button>
             </article>
           </div>

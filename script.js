@@ -15,10 +15,109 @@ const orderCodeNode = document.querySelector("[data-order-code]");
 const whatsappOrderLink = document.querySelector("[data-whatsapp-order]");
 const emailOrderLink = document.querySelector("[data-email-order]");
 
+const shopProducts = [
+  {
+    type: "汪喵星球",
+    name: "汪喵 - 腸胃益生菌",
+    detail: "一盒30包 · 建議看門口，貓貓肚痾時用",
+    cartName: "汪喵 - 腸胃益生菌 一盒30包",
+    price: 169,
+    image: "assets/products/dogcatstar-probiotics.jpg",
+    alt: "汪喵腸胃益生菌一盒30包",
+  },
+  {
+    type: "汪喵星球",
+    name: "汪喵 - 提升免疫力粉",
+    detail: "適合幼/老貓/體質虛弱，健康貓日常營養補充",
+    cartName: "汪喵 - 提升免疫力粉",
+    price: 210,
+    image: "assets/products/dogcatstar-immune.png",
+    alt: "汪喵提升免疫力粉",
+  },
+  {
+    type: "汪喵星球",
+    name: "汪喵 - 牛磺酸（重要營養）",
+    detail: "自身無法產生，需要補充；視網膜、腦部、心臟與神經系統保健",
+    cartName: "汪喵 - 牛磺酸（重要營養）",
+    price: 78,
+    image: "assets/products/dogcatstar-taurine.jpg",
+    alt: "汪喵牛磺酸重要營養",
+  },
+  {
+    type: "貓罐頭",
+    name: "貓罐頭 - 綜合口味",
+    detail: "一箱24罐",
+    cartName: "貓罐頭 - 綜合口味 一箱24罐",
+    price: 318,
+    image: "assets/products/dogcatstar-catsoup.jpg",
+    alt: "貓罐頭綜合口味一箱24罐",
+  },
+  {
+    type: "Brabanconne",
+    name: "Brabanconne 幼貓雞肉味",
+    detail: "2.5kg",
+    cartName: "Brabanconne 幼貓雞肉味 2.5kg",
+    price: 220,
+    image: "assets/products/brabanconne-kitten.png",
+    alt: "Brabanconne幼貓雞肉味2.5kg",
+  },
+];
+
 const formatPrice = (value) => `$${value.toLocaleString("en-US")}`;
 
 const getCartTotal = () => cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
 const getCartCount = () => cart.reduce((sum, item) => sum + item.quantity, 0);
+
+function injectProductStyles() {
+  if (document.querySelector("#product-image-style")) return;
+  const style = document.createElement("style");
+  style.id = "product-image-style";
+  style.textContent = `
+    .product-card { min-height: 0; padding: 18px; }
+    .product-image {
+      display: grid;
+      place-items: center;
+      aspect-ratio: 1;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #fffaf8;
+    }
+    .product-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      padding: 12px;
+    }
+  `;
+  document.head.append(style);
+}
+
+function renderShopProducts() {
+  const productGrid = document.querySelector(".product-grid");
+  if (!productGrid) return;
+
+  injectProductStyles();
+  productGrid.innerHTML = shopProducts
+    .map(
+      (product) => `
+        <article class="product-card">
+          <div class="product-image">
+            <img src="${product.image}" alt="${product.alt}" loading="lazy" />
+          </div>
+          <span class="product-type">${product.type}</span>
+          <h3>${product.name}</h3>
+          <p>${product.detail}</p>
+          <strong>${formatPrice(product.price)}</strong>
+          <button type="button" class="button product-button" data-add-product data-name="${product.cartName}" data-price="${product.price}">
+            <svg><use href="#icon-plus" /></svg>
+            加入購物車
+          </button>
+        </article>
+      `,
+    )
+    .join("");
+}
 
 function createOrderCode() {
   const now = new Date();
@@ -215,4 +314,5 @@ document.addEventListener("keydown", (event) => {
   }
 });
 
+renderShopProducts();
 renderCart();
