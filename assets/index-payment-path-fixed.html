@@ -1,0 +1,856 @@
+<!doctype html>
+<html lang="zh-Hant-HK">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Meow Me Cattery | 香港暹羅貓專門店</title>
+    <meta
+      name="description"
+      content="Meow Me Cattery 是位於香港西營盤的暹羅貓專門店，分享暹羅幼貓、日常成長記錄與家長飼養故事。"
+    />
+    <meta property="og:title" content="Meow Me Cattery | 香港暹羅貓專門店" />
+    <meta
+      property="og:description"
+      content="香港暹羅貓專門店。歡迎 WhatsApp 預約了解幼貓近況及到店查詢。"
+    />
+    <meta property="og:image" content="assets/meowme-brand.jpeg" />
+    <meta property="og:type" content="website" />
+    <script>
+      document.documentElement.dataset.page = new URLSearchParams(window.location.search).get("page") || "home";
+    </script>
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+      .product-card {
+        min-height: 0;
+      }
+
+      .product-image {
+        display: grid;
+        place-items: center;
+        aspect-ratio: 1;
+        overflow: hidden;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: #fffaf8;
+      }
+
+      .product-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        padding: 12px;
+      }
+    </style>
+    <script src="script.js" defer></script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "PetStore",
+        "name": "Meow Me Cattery 暹羅貓專門店",
+        "email": "meowme.cattery@gmail.com",
+        "telephone": "+85261575928",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "西營盤皇后大道西353號地下2號舖",
+          "addressLocality": "香港"
+        },
+        "sameAs": [
+          "https://www.instagram.com/hk.siamese",
+          "https://www.instagram.com/meowme_story",
+          "https://www.facebook.com/MeowMeCattery"
+        ]
+      }
+    </script>
+  </head>
+  <body>
+    <svg class="icon-sprite" aria-hidden="true">
+      <symbol id="icon-menu" viewBox="0 0 24 24">
+        <path d="M4 6h16M4 12h16M4 18h16" />
+      </symbol>
+      <symbol id="icon-message" viewBox="0 0 24 24">
+        <path d="M7.9 20A9 9 0 1 0 4 16.1L2 22z" />
+      </symbol>
+      <symbol id="icon-mail" viewBox="0 0 24 24">
+        <rect width="20" height="16" x="2" y="4" rx="2" />
+        <path d="m22 7-8.97 5.7a2 2 0 0 1-2.06 0L2 7" />
+      </symbol>
+      <symbol id="icon-instagram" viewBox="0 0 24 24">
+        <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
+        <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+        <path d="M17.5 6.5h.01" />
+      </symbol>
+      <symbol id="icon-map" viewBox="0 0 24 24">
+        <path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 0 1 16 0Z" />
+        <circle cx="12" cy="10" r="3" />
+      </symbol>
+      <symbol id="icon-phone" viewBox="0 0 24 24">
+        <path
+          d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.12 4.2 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.12.9.32 1.77.57 2.61a2 2 0 0 1-.45 2.11L8 9.67a16 16 0 0 0 6.33 6.33l1.23-1.23a2 2 0 0 1 2.11-.45c.84.25 1.71.45 2.61.57A2 2 0 0 1 22 16.92z"
+        />
+      </symbol>
+      <symbol id="icon-external" viewBox="0 0 24 24">
+        <path d="M15 3h6v6M10 14 21 3M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+      </symbol>
+      <symbol id="icon-cart" viewBox="0 0 24 24">
+        <circle cx="8" cy="21" r="1" />
+        <circle cx="19" cy="21" r="1" />
+        <path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h8.78a2 2 0 0 0 1.95-1.57L21 7H5.12" />
+      </symbol>
+      <symbol id="icon-plus" viewBox="0 0 24 24">
+        <path d="M5 12h14M12 5v14" />
+      </symbol>
+      <symbol id="icon-x" viewBox="0 0 24 24">
+        <path d="M18 6 6 18M6 6l12 12" />
+      </symbol>
+    </svg>
+
+    <header class="site-header">
+      <a class="brand" href="index.html" aria-label="Meow Me Cattery 首頁">
+        <img src="assets/meowme-brand.jpeg" alt="" />
+        <span>
+          <strong>Meow Me Cattery</strong>
+          <small>暹羅貓專門店</small>
+        </span>
+      </a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-menu" aria-label="開啟選單">
+        <svg><use href="#icon-menu" /></svg>
+      </button>
+      <nav id="site-menu" class="site-nav" aria-label="主要導覽">
+        <a href="index.html?page=about">關於我們</a>
+        <a href="index.html?page=support">保障與支援</a>
+        <a href="index.html?page=grooming">寵物美容</a>
+        <a href="index.html?page=shop">商品</a>
+        <a href="index.html#instagram">IG 日常</a>
+        <a href="index.html#contact">聯絡</a>
+      </nav>
+      <button class="cart-open" type="button" data-open-cart aria-label="開啟購物車">
+        <svg><use href="#icon-cart" /></svg>
+        <span data-cart-count>0</span>
+      </button>
+    </header>
+
+    <main id="home">
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero-copy">
+          <p class="eyebrow">西營盤地下2號舖 · Hong Kong Brand Since 2021</p>
+          <h1 id="hero-title"><span>Meow Me</span><span>Cattery</span></h1>
+          <p class="hero-kicker">香港暹羅貓專門店</p>
+          <p class="hero-text">
+            專注暹羅幼貓、成長記錄與社會化訓練。由日常互動到家長溝通，希望每位小朋友都以穩定、親人的狀態走進新家庭。
+          </p>
+          <div class="hero-actions">
+            <a class="button primary" href="https://wa.me/85261575928" target="_blank" rel="noopener">
+              <svg><use href="#icon-message" /></svg>
+              WhatsApp 預約
+            </a>
+            <a class="button ghost" href="https://www.instagram.com/hk.siamese" target="_blank" rel="noopener">
+              <svg><use href="#icon-instagram" /></svg>
+              主帳號
+            </a>
+          </div>
+          <dl class="hero-facts" aria-label="貓舍重點資料">
+            <div>
+              <dt>主帳號</dt>
+              <dd>@hk.siamese</dd>
+            </div>
+            <div>
+              <dt>日常帳號</dt>
+              <dd>@meowme_story</dd>
+            </div>
+            <div>
+              <dt>地址</dt>
+              <dd>西營盤皇后大道西353號地下2號舖</dd>
+            </div>
+          </dl>
+        </div>
+      </section>
+
+      <section id="instagram" class="section instagram-band">
+        <div class="section-inner section-title-row">
+          <div>
+            <p class="eyebrow">Instagram Feed</p>
+            <h2>IG 日常更新</h2>
+          </div>
+          <a class="text-link" href="https://www.instagram.com/hk.siamese/" target="_blank" rel="noopener">
+            查看主帳號
+            <svg><use href="#icon-external" /></svg>
+          </a>
+        </div>
+
+        <div class="section-inner account-grid instagram-accounts" aria-label="Instagram 帳號">
+          <a class="account-card" href="https://www.instagram.com/hk.siamese/" target="_blank" rel="noopener">
+            <img src="assets/meowme-brand.jpeg" alt="" />
+            <span>
+              <strong>@hk.siamese</strong>
+              <small>主帳號 · 暹羅幼貓、成長片段及貓舍資訊</small>
+            </span>
+          </a>
+          <a class="account-card" href="https://www.instagram.com/meowme_story/" target="_blank" rel="noopener">
+            <img src="assets/meowme-brand.jpeg" alt="" />
+            <span>
+              <strong>@meowme_story</strong>
+              <small>日常帳號 · 分享暹羅貓專業資訊</small>
+            </span>
+          </a>
+        </div>
+
+        <div class="section-inner embed-grid instagram-preview" aria-label="Instagram 貼文預覽">
+          <div class="embed-panel">
+            <iframe
+              title="Instagram hk.siamese 貼文預覽"
+              src="https://www.instagram.com/hk.siamese/embed"
+              loading="lazy"
+            ></iframe>
+          </div>
+          <div class="embed-panel">
+            <iframe
+              title="Instagram meowme_story 貼文預覽"
+              src="https://www.instagram.com/meowme_story/embed"
+              loading="lazy"
+            ></iframe>
+          </div>
+        </div>
+      </section>
+
+      <section id="about" class="section intro-band">
+        <div class="section-inner about-hero-grid compact-about">
+          <div class="about-hero-copy">
+            <p class="eyebrow">About Meow Me</p>
+            <h2>關於 Meow Me Cattery</h2>
+            <p class="lead">
+              本貓舍由 2021 年開業至今，主要繁殖暹羅貓，致力幫家長搵到健康、心儀、性格親人的貓貓。
+            </p>
+            <p>
+              我哋重視透明溝通、健康報告、社會化訓練及接貓後支援。家長可以排隊等待幼貓出生，亦可預約親身了解現貓狀況。
+            </p>
+          </div>
+          <figure class="about-feature-photo">
+            <img src="assets/about-cat-dress.jpeg" alt="Meow Me Cattery 暹羅貓穿著粉色衣服" />
+          </figure>
+        </div>
+
+        <div class="section-inner about-story-grid">
+          <article class="about-story-card">
+            <span class="value-number">01</span>
+            <h3>24/7 成長更新</h3>
+            <p>奶媽會主動與家長保持聯繫，分享貓貓身體狀況、日常互動及成長片段。</p>
+          </article>
+          <article class="about-story-card">
+            <span class="value-number">02</span>
+            <h3>接貓前健康檢查</h3>
+            <p>接貓前可與家長一同到獸醫診所檢查，確保貓貓健康帶回家。</p>
+          </article>
+          <article class="about-story-card">
+            <span class="value-number">03</span>
+            <h3>社會化訓練</h3>
+            <p>每隻貓貓從小由本舍用心陪育，熟習人類互動，回家時更親和穩定。</p>
+          </article>
+        </div>
+
+        <div class="section-inner about-photo-grid" aria-label="Meow Me Cattery 活動及貓舍照片">
+          <img src="assets/about-booth-wide.jpeg" alt="Meow Me Cattery 展覽攤位" />
+          <img src="assets/about-booth-front.jpeg" alt="Meow Me Cattery 展覽攤位正面" />
+          <img src="assets/about-market-table.jpeg" alt="Meow Me Cattery 商品及宣傳展示" />
+        </div>
+
+        <div class="section-inner about-info-panel">
+          <div>
+            <p class="eyebrow">Siamese Colors</p>
+            <h3>暹羅色系</h3>
+            <p>海豹、藍重點、紫重點、朱古力、虎斑。純種基因、父母可見、成長片段。</p>
+          </div>
+          <div class="about-list">
+            <p>剛出生幼貓及現貓接受排隊及預訂</p>
+            <p>365 天健康保障</p>
+            <p>免費獸醫健康檢查</p>
+            <p>3 針疫苗及晶片</p>
+            <p>體內外杜蟲、滴蝨、耳腔清潔</p>
+            <p>24 小時售後指導，幫助新手家長</p>
+            <p>預訂貓貓狀況每日更新</p>
+          </div>
+        </div>
+
+        <div class="section-inner about-info-panel about-science">
+          <div>
+            <p class="eyebrow">Daily Care</p>
+            <h3>日常照顧</h3>
+            <p>主要糧食包括新鮮鮮食、比利時天然乾糧、汪喵星球凍乾、罐罐及每日額外 supplements。</p>
+            <p>本舍每日使用獸醫診所專用 TH4 清潔消毒。</p>
+          </div>
+          <div>
+            <p class="eyebrow">Genetic Testing</p>
+            <h3>全港首間科學繁殖暹羅貓</h3>
+            <p>
+              爸爸媽媽全部通過基因檢測，以香港化驗所報告及數據，配合科學方法繁殖健康暹羅貓，減低潛在遺傳病風險。
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section id="support" class="section support-band">
+        <div class="section-inner support-layout">
+          <div class="support-copy">
+            <p class="eyebrow">Guarantee & Support</p>
+            <h2>Meow Me Cattery 保障與支援</h2>
+            <p class="lead">
+              品質、健康、售後及醫療支援清晰列明，方便家長了解接貓前後的保障安排。
+            </p>
+          </div>
+
+          <div class="support-content" aria-label="保障與支援資料">
+            <article class="support-hero-card">
+              <p class="eyebrow">Since 2021</p>
+              <h3>2021年開業｜多年豐富繁育經驗</h3>
+              <p>專心只培育優質精緻暹羅貓</p>
+            </article>
+
+            <div class="support-card-grid">
+              <article class="support-card">
+                <span class="support-index">01</span>
+                <h3>品質嚴格把關</h3>
+                <ul>
+                  <li>全部貓咪香港出世 店主親自接生</li>
+                  <li>貓咪父母通過遺傳病篩查</li>
+                  <li>每隻貓咪附送完整成長片段</li>
+                </ul>
+              </article>
+
+              <article class="support-card">
+                <span class="support-index">02</span>
+                <h3>健康層層把關</h3>
+                <ul>
+                  <li>離舍前專業獸醫健康檢視</li>
+                  <li>免費包3針疫苗+專屬晶片</li>
+                  <li>長達365日合約 保障全面周全</li>
+                </ul>
+              </article>
+
+              <article class="support-card">
+                <span class="support-index">03</span>
+                <h3>全方位貼心售後</h3>
+                <ul>
+                  <li>24小時一對一專屬諮詢</li>
+                  <li>免費專業新手養貓教學</li>
+                  <li>專為敏感人士提供養貓協助</li>
+                </ul>
+                <p class="support-note">不論新舊家長 全部福利均等享有</p>
+              </article>
+
+              <article class="support-card">
+                <span class="support-index">04</span>
+                <h3>溫馨經營特色</h3>
+                <ul>
+                  <li>一人用心經營小店</li>
+                  <li>採用預約制到店參觀</li>
+                  <li>專屬獨立時間接待</li>
+                  <li>一對一詳細專業講解</li>
+                </ul>
+                <p class="support-note">誠信經營 用心守護每一隻毛孩</p>
+              </article>
+
+              <article class="support-card support-card-accent">
+                <span class="support-index">05</span>
+                <h3>保障全面 全新升級</h3>
+                <p>新舊家長都有福 齊齊受惠</p>
+                <p>為何眾多貓主都選擇我哋</p>
+              </article>
+
+              <article class="support-card">
+                <span class="support-index">06</span>
+                <h3>專業健康支援</h3>
+                <ul>
+                  <li>設有專業獸醫團隊支援</li>
+                  <li>提供終身輕/重症醫療協助</li>
+                </ul>
+              </article>
+            </div>
+
+            <div class="support-pill-grid" aria-label="專業健康支援細項">
+              <div>
+                <strong>專業團隊</strong>
+                <span>定期健康檢查 層層把關</span>
+              </div>
+              <div>
+                <strong>終身醫療協助</strong>
+                <span>輕症 / 重症 全程支援</span>
+              </div>
+              <div>
+                <strong>健康守護</strong>
+                <span>全方位守護 每一隻毛孩</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="grooming" class="section grooming-band">
+        <div class="section-inner section-title-row">
+          <div>
+            <p class="eyebrow">Pet Grooming</p>
+            <h2>寵物美容項目</h2>
+          </div>
+          <a class="text-link" href="https://wa.me/85261575928" target="_blank" rel="noopener">
+            WhatsApp 預約
+            <svg><use href="#icon-external" /></svg>
+          </a>
+        </div>
+        <div class="section-inner menu-showcase" aria-label="寵物美容電子收費表">
+          <article class="menu-card menu-wide">
+            <div class="menu-card-heading">
+              <span>Dog Grooming</span>
+              <h3>犬隻美容</h3>
+            </div>
+            <div class="table-scroll">
+              <table class="price-table">
+                <thead>
+                  <tr>
+                    <th>體型</th>
+                    <th>沖涼連基本護理</th>
+                    <th>沖涼·剪毛<br />剷身留頭尾造型</th>
+                    <th>沖涼·全手剪<br />指定造型</th>
+                    <th>SPA 短毛</th>
+                    <th>SPA 長毛</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td data-label="體型">迷你犬 0 - 3KG</td>
+                    <td data-label="沖涼連基本護理">$290</td>
+                    <td data-label="沖涼·剪毛 剷身留頭尾造型">$480</td>
+                    <td data-label="沖涼·全手剪 指定造型">$680</td>
+                    <td data-label="SPA 短毛">$150</td>
+                    <td data-label="SPA 長毛">$250</td>
+                  </tr>
+                  <tr>
+                    <td data-label="體型">小型犬 3.1 - 5KG</td>
+                    <td data-label="沖涼連基本護理">$350</td>
+                    <td data-label="沖涼·剪毛 剷身留頭尾造型">$580</td>
+                    <td data-label="沖涼·全手剪 指定造型">$780</td>
+                    <td data-label="SPA 短毛">$180</td>
+                    <td data-label="SPA 長毛">$280</td>
+                  </tr>
+                  <tr>
+                    <td data-label="體型">中型犬 5.1 - 10KG</td>
+                    <td data-label="沖涼連基本護理">$380</td>
+                    <td data-label="沖涼·剪毛 剷身留頭尾造型">$680</td>
+                    <td data-label="沖涼·全手剪 指定造型">$830</td>
+                    <td data-label="SPA 短毛">$200</td>
+                    <td data-label="SPA 長毛">$300</td>
+                  </tr>
+                  <tr>
+                    <td data-label="體型">其他體重面議</td>
+                    <td data-label="收費" colspan="5">面議</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </article>
+
+          <article class="menu-card menu-wide">
+            <div class="menu-card-heading">
+              <span>Cat Grooming</span>
+              <h3>貓貓全套美容連基本護理</h3>
+            </div>
+            <div class="table-scroll">
+              <table class="price-table">
+                <thead>
+                  <tr>
+                    <th>體重</th>
+                    <th>短毛貓全套美容連基本護理</th>
+                    <th>長毛貓全套美容連基本護理</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td data-label="體重">0 - 2.5KG</td>
+                    <td data-label="短毛貓全套美容連基本護理">$398</td>
+                    <td data-label="長毛貓全套美容連基本護理">$498</td>
+                  </tr>
+                  <tr>
+                    <td data-label="體重">2.6 - 5KG</td>
+                    <td data-label="短毛貓全套美容連基本護理">$438</td>
+                    <td data-label="長毛貓全套美容連基本護理">$538</td>
+                  </tr>
+                  <tr>
+                    <td data-label="體重">5.1 - 7KG</td>
+                    <td data-label="短毛貓全套美容連基本護理">$468</td>
+                    <td data-label="長毛貓全套美容連基本護理">$568</td>
+                  </tr>
+                  <tr>
+                    <td data-label="體重">Over 7 KG</td>
+                    <td data-label="短毛貓全套美容連基本護理">$498</td>
+                    <td data-label="長毛貓全套美容連基本護理">$598</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </article>
+
+          <article class="menu-card menu-wide">
+            <div class="menu-card-heading">
+              <span>Spa</span>
+              <h3>貓貓 SPA 收費</h3>
+            </div>
+            <div class="table-scroll">
+              <table class="price-table">
+                <thead>
+                  <tr>
+                    <th>項目</th>
+                    <th>短毛</th>
+                    <th>長毛</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td data-label="項目">日本極上重炭酸泉溫泉浴</td>
+                    <td data-label="短毛">$120</td>
+                    <td data-label="長毛">$150</td>
+                  </tr>
+                  <tr>
+                    <td data-label="項目">日本 AYURVEDA HERBS 草本泥</td>
+                    <td data-label="短毛">$180</td>
+                    <td data-label="長毛">$230</td>
+                  </tr>
+                  <tr>
+                    <td data-label="項目">韓國極致低敏肌膚調理酵素溫泉浴</td>
+                    <td data-label="短毛">$120</td>
+                    <td data-label="長毛">$150</td>
+                  </tr>
+                  <tr>
+                    <td data-label="項目">Mad Farmers Natural Herb Spa</td>
+                    <td data-label="短毛">$150</td>
+                    <td data-label="長毛">$200</td>
+                  </tr>
+                  <tr>
+                    <td data-label="項目">Pet Esthé 日本扶養泥</td>
+                    <td data-label="短毛">$180</td>
+                    <td data-label="長毛">$230</td>
+                  </tr>
+                  <tr>
+                    <td data-label="項目">日本天然香薰死海鹽</td>
+                    <td data-label="短毛">$150</td>
+                    <td data-label="長毛">$200</td>
+                  </tr>
+                  <tr>
+                    <td data-label="項目">以色列純淨死海泥</td>
+                    <td data-label="短毛">$180</td>
+                    <td data-label="長毛">$230</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </article>
+
+          <article class="menu-card">
+            <div class="menu-card-heading">
+              <span>Spa Menu</span>
+              <h3>SPA 項目</h3>
+            </div>
+            <div class="tag-list">
+              <span>日本極上重炭酸泉溫泉浴</span>
+              <span>日本 AYURVEDA HERBS 草本泥</span>
+              <span>韓國極致低敏肌膚調理酵素溫泉浴</span>
+              <span>韓國Mad Farmers Natural Herb Spa</span>
+              <span>Pet Esthé 日本扶養泥</span>
+              <span>日本天然香薰死海鹽</span>
+              <span>美國天然牛奶+蜂蜜保濕泡沫浴</span>
+              <span>以色列純淨死海泥</span>
+            </div>
+          </article>
+
+          <article class="menu-card">
+            <div class="menu-card-heading">
+              <span>Extra Care</span>
+              <h3>特別護理項目</h3>
+            </div>
+            <dl class="price-list">
+              <div><dt>基本刷牙</dt><dd>$50</dd></div>
+              <div><dt>沸石刷牙</dt><dd>$80</dd></div>
+              <div><dt>沸石免麻醉洗牙</dt><dd>$380up</dd></div>
+              <div><dt>超聲波免麻醉洗牙</dt><dd>$880up</dd></div>
+              <div><dt>浸藥 / 驅蟲 / 去油</dt><dd>$80</dd></div>
+              <div><dt>剪指甲及洗耳</dt><dd>$160</dd></div>
+              <div><dt>解結 每15分鐘</dt><dd>$80</dd></div>
+              <div><dt>貴婦腳 / 貴婦嘴</dt><dd>+$80</dd></div>
+              <div><dt>剃剪</dt><dd>面議</dd></div>
+            </dl>
+          </article>
+
+          <article class="menu-card">
+            <div class="menu-card-heading">
+              <span>Included</span>
+              <h3>以上服務包括</h3>
+            </div>
+            <p class="menu-note">本店使用Hyponic極致低敏高級洗/護毛液</p>
+            <p class="menu-note">**SPA最少10分鐘放鬆按摩服務**</p>
+            <p class="menu-note"><strong>犬隻包括：</strong></p>
+            <div class="tag-list">
+              <span>剪甲</span>
+              <span>拔耳毛</span>
+              <span>洗耳</span>
+              <span>腳底毛</span>
+              <span>Pat Pat 毛</span>
+              <span>剃肚毛</span>
+              <span>清肛門線</span>
+            </div>
+            <p class="menu-note menu-note-spaced"><strong>貓貓包括：</strong></p>
+            <div class="tag-list">
+              <span>剪甲</span>
+              <span>洗耳</span>
+              <span>腳底毛</span>
+              <span>Pat Pat 毛</span>
+              <span>清肛門線</span>
+            </div>
+          </article>
+
+          <article class="menu-card">
+            <div class="menu-card-heading">
+              <span>Terms</span>
+              <h3>注意事項 / 優惠</h3>
+            </div>
+            <div class="notice-list">
+              <p>*不設全手剪</p>
+              <p>**大量死毛/嚴重打結面議</p>
+              <p>**攻擊性狗狗不接**</p>
+              <p>**攻擊性貓貓不接**</p>
+              <p>**一寵一消毒**</p>
+              <p>**一籠一消毒**</p>
+              <p>新客及家長有特別優惠折扣</p>
+              <p>**套票可享88折優惠**</p>
+              <p>**套票優惠低至76折**</p>
+              <p>5次送1次 / 10次送3次</p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section id="contact" class="section contact-band">
+        <div class="section-inner contact-layout">
+          <div>
+            <p class="eyebrow">Contact</p>
+            <h2>想了解暹羅小朋友，先 WhatsApp 預約</h2>
+            <p class="lead">
+              幼貓狀況會隨時間更新，建議先發訊息確認可見面時間、性格資料與到店安排。
+            </p>
+          </div>
+          <div class="contact-grid">
+            <a class="contact-card" href="https://wa.me/85261575928" target="_blank" rel="noopener">
+              <svg><use href="#icon-message" /></svg>
+              <span>
+                <strong>WhatsApp</strong>
+                <small>6157 5928</small>
+              </span>
+            </a>
+            <a class="contact-card" href="mailto:meowme.cattery@gmail.com">
+              <svg><use href="#icon-mail" /></svg>
+              <span>
+                <strong>電郵</strong>
+                <small>meowme.cattery@gmail.com</small>
+              </span>
+            </a>
+            <a class="contact-card" href="https://www.google.com/maps/place/Meow+Me+Cattery+%E6%9A%B9%E7%BE%85%E8%B2%93%E5%B0%88%E9%96%80%E5%BA%97/@22.287108,114.1408121,21z/data=!4m14!1m7!3m6!1s0x3403ff80e05fb925:0x2338150da6443ab0!2z5oSb55qE5a-154mp5bqX!8m2!3d22.2870827!4d114.141107!16s%2Fg%2F1td4rwxl!3m5!1s0x3404019f1602c705:0xd481de218e420260!8m2!3d22.2870841!4d114.1409201!16s%2Fg%2F11s42tz4yf?hl=zh-TW&amp;entry=ttu&amp;g_ep=EgoyMDI2MDYxNi4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener">
+              <svg><use href="#icon-map" /></svg>
+              <span>
+                <strong>地址</strong>
+                <small>西營盤皇后大道西353號地下2號舖</small>
+              </span>
+            </a>
+            <a class="contact-card" href="https://www.facebook.com/MeowMeCattery" target="_blank" rel="noopener">
+              <svg><use href="#icon-external" /></svg>
+              <span>
+                <strong>Facebook</strong>
+                <small>@Meow Me Cattery</small>
+              </span>
+            </a>
+          </div>
+        </div>
+        <div class="section-inner map-panel" aria-label="Google Map 地址">
+          <div class="map-copy">
+            <p class="eyebrow">Visit Us</p>
+            <h3>西營盤皇后大道西353號地下2號舖</h3>
+            <a class="text-link" href="https://www.google.com/maps/place/Meow+Me+Cattery+%E6%9A%B9%E7%BE%85%E8%B2%93%E5%B0%88%E9%96%80%E5%BA%97/@22.287108,114.1408121,21z/data=!4m14!1m7!3m6!1s0x3403ff80e05fb925:0x2338150da6443ab0!2z5oSb55qE5a-154mp5bqX!8m2!3d22.2870827!4d114.141107!16s%2Fg%2F1td4rwxl!3m5!1s0x3404019f1602c705:0xd481de218e420260!8m2!3d22.2870841!4d114.1409201!16s%2Fg%2F11s42tz4yf?hl=zh-TW&amp;entry=ttu&amp;g_ep=EgoyMDI2MDYxNi4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener">
+              開啟 Google Map
+              <svg><use href="#icon-external" /></svg>
+            </a>
+          </div>
+          <iframe
+            title="Meow Me Cattery Google Map"
+            src="https://www.google.com/maps?q=Meow+Me+Cattery+%E6%9A%B9%E7%BE%85%E8%B2%93%E5%B0%88%E9%96%80%E5%BA%97&amp;ll=22.2870841,114.1409201&amp;z=21&amp;output=embed"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+          ></iframe>
+        </div>
+      </section>
+
+      <section id="shop" class="section shop-band">
+        <div class="section-inner section-title-row">
+          <div>
+            <p class="eyebrow">Shop</p>
+            <h2>商品選購</h2>
+          </div>
+          <button class="text-link text-button" type="button" data-open-cart>
+            查看購物車
+            <svg><use href="#icon-cart" /></svg>
+          </button>
+        </div>
+
+        <div class="section-inner shop-layout">
+          <div class="product-grid" aria-label="可選購商品">
+            <article class="product-card">
+              <div class="product-image">
+                <img src="assets/products/dogcatstar-probiotics.jpg" alt="汪喵腸胃益生菌一盒30包" loading="lazy" />
+              </div>
+              <span class="product-type">汪喵星球</span>
+              <h3>汪喵 - 腸胃益生菌</h3>
+              <p>一盒30包 · 建議看門口，貓貓肚痾時用</p>
+              <strong>$169</strong>
+              <button type="button" class="button product-button" data-add-product data-name="汪喵 - 腸胃益生菌 一盒30包" data-price="169">
+                <svg><use href="#icon-plus" /></svg>
+                加入購物車
+              </button>
+            </article>
+            <article class="product-card">
+              <div class="product-image">
+                <img src="assets/products/dogcatstar-immune.png" alt="汪喵提升免疫力粉" loading="lazy" />
+              </div>
+              <span class="product-type">汪喵星球</span>
+              <h3>汪喵 - 提升免疫力粉</h3>
+              <p>適合幼/老貓/體質虛弱，健康貓日常營養補充</p>
+              <strong>$210</strong>
+              <button type="button" class="button product-button" data-add-product data-name="汪喵 - 提升免疫力粉" data-price="210">
+                <svg><use href="#icon-plus" /></svg>
+                加入購物車
+              </button>
+            </article>
+            <article class="product-card">
+              <div class="product-image">
+                <img src="assets/products/dogcatstar-taurine.jpg" alt="汪喵牛磺酸重要營養" loading="lazy" />
+              </div>
+              <span class="product-type">汪喵星球</span>
+              <h3>汪喵 - 牛磺酸（重要營養）</h3>
+              <p>自身無法產生，需要補充；視網膜、腦部、心臟與神經系統保健</p>
+              <strong>$78</strong>
+              <button type="button" class="button product-button" data-add-product data-name="汪喵 - 牛磺酸（重要營養）" data-price="78">
+                <svg><use href="#icon-plus" /></svg>
+                加入購物車
+              </button>
+            </article>
+            <article class="product-card">
+              <div class="product-image">
+                <img src="assets/products/dogcatstar-catsoup.jpg" alt="貓罐頭綜合口味一箱24罐" loading="lazy" />
+              </div>
+              <span class="product-type">貓罐頭</span>
+              <h3>貓罐頭 - 綜合口味</h3>
+              <p>一箱24罐</p>
+              <strong>$318</strong>
+              <button type="button" class="button product-button" data-add-product data-name="貓罐頭 - 綜合口味 一箱24罐" data-price="318">
+                <svg><use href="#icon-plus" /></svg>
+                加入購物車
+              </button>
+            </article>
+            <article class="product-card">
+              <div class="product-image">
+                <img src="assets/products/brabanconne-kitten.png" alt="Brabanconne幼貓雞肉味2.5kg" loading="lazy" />
+              </div>
+              <span class="product-type">Brabanconne</span>
+              <h3>Brabanconne 幼貓雞肉味</h3>
+              <p>2.5kg</p>
+              <strong>$220</strong>
+              <button type="button" class="button product-button" data-add-product data-name="Brabanconne 幼貓雞肉味 2.5kg" data-price="220">
+                <svg><use href="#icon-plus" /></svg>
+                加入購物車
+              </button>
+            </article>
+          </div>
+
+          <aside class="cart-panel" aria-label="購物車">
+            <div class="cart-panel-heading">
+              <h3>購物車</h3>
+              <span data-cart-count-label>0 件</span>
+            </div>
+            <div class="cart-items" data-cart-items>
+              <p class="cart-empty">尚未選購項目</p>
+            </div>
+            <div class="cart-total">
+              <span>合計</span>
+              <strong data-cart-total>$0</strong>
+            </div>
+            <button class="button primary checkout-button" type="button" data-checkout disabled>
+              <svg><use href="#icon-cart" /></svg>
+              結帳 / 選擇付款方式
+            </button>
+            <p class="cart-hint">商品正式上架後，可加入購物車並選擇 PayMe、AlipayHK 或 FPS 付款。付款後請將付款截圖傳送到 WhatsApp 6157 5928，並附上姓名及所選商品。</p>
+          </aside>
+        </div>
+      </section>
+    </main>
+
+    <div class="payment-modal" data-payment-modal aria-hidden="true">
+      <div class="payment-dialog" role="dialog" aria-modal="true" aria-labelledby="payment-title">
+        <button class="modal-close" type="button" data-close-payment aria-label="關閉付款視窗">
+          <svg><use href="#icon-x" /></svg>
+        </button>
+        <div>
+          <p class="eyebrow">Payment</p>
+          <h2 id="payment-title">付款方式</h2>
+          <p class="payment-copy">請選擇 PayMe、AlipayHK 或 FPS 完成付款。付款後請按下方 WhatsApp 或電郵按鈕傳送訂單內容及付款截圖。</p>
+        </div>
+        <div class="payment-grid">
+          <div class="payment-methods" aria-label="付款方式">
+            <article class="payment-card">
+              <div>
+                <span class="payment-label">PayMe</span>
+                <strong>PayMe 付款碼</strong>
+              </div>
+              <img src="assets/assets/payments/payme-qr.jpg" alt="PayMe 付款 QR Code" loading="lazy" />
+            </article>
+            <article class="payment-card">
+              <div>
+                <span class="payment-label">AlipayHK</span>
+                <strong>AlipayHK 付款碼</strong>
+              </div>
+              <img src="assets/assets/payments/alipayhk-qr.jpg" alt="AlipayHK 付款 QR Code" loading="lazy" />
+            </article>
+            <article class="payment-card fps-card">
+              <div>
+                <span class="payment-label">FPS</span>
+                <strong>轉數快 FPS</strong>
+              </div>
+              <p class="fps-number">102184900</p>
+              <small>付款後請保留截圖，並連同訂單內容傳送給我們。</small>
+            </article>
+          </div>
+          <div class="payment-summary">
+            <h3>訂單內容</h3>
+            <p class="order-code">訂單編號：<strong data-order-code>-</strong></p>
+            <div data-payment-items></div>
+            <div class="cart-total payment-total">
+              <span>需付款</span>
+              <strong data-payment-total>$0</strong>
+            </div>
+            <div class="order-actions">
+              <a class="button primary" href="https://wa.me/85261575928" target="_blank" rel="noopener" data-whatsapp-order>
+                <svg><use href="#icon-message" /></svg>
+                WhatsApp 傳送訂單
+              </a>
+              <a class="button ghost" href="mailto:meowme.cattery@gmail.com" data-email-order>
+                <svg><use href="#icon-mail" /></svg>
+                電郵訂單內容
+              </a>
+            </div>
+            <p class="cart-hint">系統會自動填好訂單內容；付款後請一併上載或附上付款截圖。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer class="site-footer">
+      <p>Meow Me Cattery · 香港暹羅貓專門店</p>
+      <div>
+        <a href="https://www.instagram.com/hk.siamese" target="_blank" rel="noopener">Instagram</a>
+        <a href="mailto:meowme.cattery@gmail.com">Email</a>
+        <a href="https://wa.me/85261575928" target="_blank" rel="noopener">WhatsApp</a>
+      </div>
+    </footer>
+  </body>
+</html>
