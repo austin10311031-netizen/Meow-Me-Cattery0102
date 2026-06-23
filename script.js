@@ -146,7 +146,7 @@ function buildOrderMessage(orderCode) {
     "",
     "客人姓名：",
     "聯絡電話：",
-    "備註：",
+    "地址：",
     "",
     "我已付款，付款截圖如下。",
   ].join("\n");
