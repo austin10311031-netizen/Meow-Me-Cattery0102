@@ -142,6 +142,7 @@ function buildOrderMessage(orderCode) {
     ...lines,
     "",
     `合計：${formatPrice(getCartTotal())}`,
+    "付款方式：PayMe / AlipayHK / FPS 102184900",
     "",
     "客人姓名：",
     "聯絡電話：",

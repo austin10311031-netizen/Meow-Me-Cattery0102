@@ -1288,35 +1288,64 @@ h3 {
   margin-top: 22px;
 }
 
-.payment-qr,
+.payment-card,
 .payment-summary {
   border: 1px solid var(--line);
   border-radius: 8px;
   background: #fff;
 }
 
-.payment-qr {
+.payment-methods {
   display: grid;
-  justify-items: center;
-  gap: 12px;
-  padding: 24px;
+  gap: 14px;
+}
+
+.payment-card {
+  display: grid;
+  gap: 14px;
+  padding: 18px;
+}
+
+.payment-card img {
+  width: min(250px, 100%);
+  aspect-ratio: 1;
+  justify-self: center;
+  object-fit: contain;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #fff;
+}
+
+.payment-card strong {
+  display: block;
+  margin-top: 4px;
+}
+
+.payment-label {
+  color: var(--muted);
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.fps-card {
+  background: #fff9ee;
+}
+
+.fps-number {
+  padding: 14px;
+  color: var(--ink);
+  border: 1px dashed rgba(33, 31, 29, 0.24);
+  border-radius: 8px;
+  background: #fff;
+  font-size: clamp(1.55rem, 4vw, 2.1rem);
+  font-weight: 900;
+  line-height: 1;
   text-align: center;
 }
 
-.qr-pattern {
-  width: min(260px, 100%);
-  aspect-ratio: 1;
-  border: 12px solid #fff;
-  outline: 1px solid var(--line);
-  background:
-    linear-gradient(90deg, var(--ink) 10px, transparent 10px 22px, var(--ink) 22px 34px, transparent 34px 46px),
-    linear-gradient(var(--ink) 10px, transparent 10px 22px, var(--ink) 22px 34px, transparent 34px 46px),
-    var(--yellow);
-  background-size: 46px 46px;
-}
-
-.payment-qr span {
-  max-width: 280px;
+.fps-card small {
   color: var(--muted);
   font-size: 0.9rem;
   line-height: 1.55;
@@ -1682,7 +1711,7 @@ h3 {
     padding-right: 44px;
   }
 
-  .qr-pattern {
+  .payment-card img {
     width: min(220px, 100%);
   }
 

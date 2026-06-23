@@ -777,9 +777,9 @@
             </div>
             <button class="button primary checkout-button" type="button" data-checkout disabled>
               <svg><use href="#icon-cart" /></svg>
-              結帳 / 顯示付款 QR
+              結帳 / 選擇付款方式
             </button>
-            <p class="cart-hint">商品正式上架後，可加入購物車並顯示付款 QR。付款後請將付款截圖傳送到 WhatsApp 6157 5928，並附上姓名及所選商品。</p>
+            <p class="cart-hint">商品正式上架後，可加入購物車並選擇 PayMe、AlipayHK 或 FPS 付款。付款後請將付款截圖傳送到 WhatsApp 6157 5928，並附上姓名及所選商品。</p>
           </aside>
         </div>
       </section>
@@ -792,14 +792,33 @@
         </button>
         <div>
           <p class="eyebrow">Payment</p>
-          <h2 id="payment-title">付款 QR Code</h2>
-          <p class="payment-copy">請使用付款 QR Code 完成付款。付款後請按下方 WhatsApp 或電郵按鈕傳送訂單內容及付款截圖。</p>
+          <h2 id="payment-title">付款方式</h2>
+          <p class="payment-copy">請選擇 PayMe、AlipayHK 或 FPS 完成付款。付款後請按下方 WhatsApp 或電郵按鈕傳送訂單內容及付款截圖。</p>
         </div>
         <div class="payment-grid">
-          <div class="payment-qr" aria-label="付款 QR Code 佔位">
-            <div class="qr-pattern"></div>
-            <strong>付款 QR Code</strong>
-            <span>請掃描店舖付款碼；付款後將截圖傳送到 WhatsApp</span>
+          <div class="payment-methods" aria-label="付款方式">
+            <article class="payment-card">
+              <div>
+                <span class="payment-label">PayMe</span>
+                <strong>PayMe 付款碼</strong>
+              </div>
+              <img src="assets/payments/payme-qr.jpg" alt="PayMe 付款 QR Code" loading="lazy" />
+            </article>
+            <article class="payment-card">
+              <div>
+                <span class="payment-label">AlipayHK</span>
+                <strong>AlipayHK 付款碼</strong>
+              </div>
+              <img src="assets/payments/alipayhk-qr.jpg" alt="AlipayHK 付款 QR Code" loading="lazy" />
+            </article>
+            <article class="payment-card fps-card">
+              <div>
+                <span class="payment-label">FPS</span>
+                <strong>轉數快 FPS</strong>
+              </div>
+              <p class="fps-number">102184900</p>
+              <small>付款後請保留截圖，並連同訂單內容傳送給我們。</small>
+            </article>
           </div>
           <div class="payment-summary">
             <h3>訂單內容</h3>
