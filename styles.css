@@ -722,6 +722,63 @@ h3 {
   background: #f8d7d3;
 }
 
+.shop-lock {
+  display: grid;
+  min-height: calc(100svh - 180px);
+  place-items: center;
+}
+
+.shop-lock-panel {
+  width: min(100%, 560px);
+  padding: clamp(24px, 5vw, 42px);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #fff;
+  box-shadow: var(--shadow);
+}
+
+.shop-lock-panel h2 {
+  margin-bottom: 12px;
+}
+
+.shop-password-form {
+  display: grid;
+  gap: 10px;
+  margin-top: 22px;
+}
+
+.shop-password-form label {
+  font-weight: 900;
+}
+
+.shop-password-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 10px;
+}
+
+.shop-password-row input {
+  width: 100%;
+  min-height: 48px;
+  padding: 0 14px;
+  color: var(--ink);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #fffaf8;
+  font: inherit;
+}
+
+.shop-password-row input:focus {
+  border-color: var(--rose);
+  outline: 3px solid rgba(189, 116, 111, 0.18);
+}
+
+.shop-password-error {
+  margin: 4px 0 0;
+  color: #9f2f2b;
+  font-weight: 800;
+}
+
 .section-title-row {
   display: flex;
   align-items: end;
@@ -1709,6 +1766,10 @@ h3 {
 
   .payment-dialog h2 {
     padding-right: 44px;
+  }
+
+  .shop-password-row {
+    grid-template-columns: 1fr;
   }
 
   .payment-card img {

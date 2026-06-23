@@ -2,6 +2,8 @@ const navToggle = document.querySelector(".nav-toggle");
 const siteNav = document.querySelector(".site-nav");
 const cart = [];
 const currentPage = document.documentElement.dataset.page || "home";
+const shopPassword = "mmc2021";
+const shopAccessKey = "meowme-shop-access";
 
 const cartCountNodes = document.querySelectorAll("[data-cart-count]");
 const cartCountLabel = document.querySelector("[data-cart-count-label]");
@@ -14,6 +16,11 @@ const paymentTotalNode = document.querySelector("[data-payment-total]");
 const orderCodeNode = document.querySelector("[data-order-code]");
 const whatsappOrderLink = document.querySelector("[data-whatsapp-order]");
 const emailOrderLink = document.querySelector("[data-email-order]");
+const shopLockNode = document.querySelector("[data-shop-lock]");
+const shopPrivateNode = document.querySelector("[data-shop-private]");
+const shopPasswordForm = document.querySelector("[data-shop-password-form]");
+const shopPasswordInput = document.querySelector("[data-shop-password-input]");
+const shopPasswordError = document.querySelector("[data-shop-password-error]");
 
 const shopProducts = [
   {
@@ -67,6 +74,74 @@ const formatPrice = (value) => `$${value.toLocaleString("en-US")}`;
 
 const getCartTotal = () => cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
 const getCartCount = () => cart.reduce((sum, item) => sum + item.quantity, 0);
+
+function getShopAccess() {
+  try {
+    return sessionStorage.getItem(shopAccessKey) === "true";
+  } catch {
+    return false;
+  }
+}
+
+function setShopAccess() {
+  try {
+    sessionStorage.setItem(shopAccessKey, "true");
+  } catch {
+    // Browsing still works even when sessionStorage is unavailable.
+  }
+}
+
+function showProtectedShop() {
+  if (shopPrivateNode) {
+    shopPrivateNode.hidden = false;
+  }
+
+  if (shopLockNode) {
+    shopLockNode.hidden = true;
+  }
+}
+
+function showShopPasswordGate() {
+  if (shopPrivateNode) {
+    shopPrivateNode.hidden = true;
+  }
+
+  if (shopLockNode) {
+    shopLockNode.hidden = false;
+  }
+}
+
+function initShopPasswordGate() {
+  if (currentPage !== "shop" || !shopLockNode || !shopPrivateNode) return;
+
+  if (getShopAccess()) {
+    showProtectedShop();
+  } else {
+    showShopPasswordGate();
+    shopPasswordInput?.focus();
+  }
+
+  shopPasswordForm?.addEventListener("submit", (event) => {
+    event.preventDefault();
+    const password = shopPasswordInput?.value.trim();
+
+    if (password === shopPassword) {
+      setShopAccess();
+      showProtectedShop();
+      shopPasswordForm.reset();
+      if (shopPasswordError) {
+        shopPasswordError.hidden = true;
+      }
+      document.querySelector("#shop")?.scrollIntoView({ behavior: "smooth", block: "start" });
+      return;
+    }
+
+    if (shopPasswordError) {
+      shopPasswordError.hidden = false;
+    }
+    shopPasswordInput?.select();
+  });
+}
 
 function injectProductStyles() {
   if (document.querySelector("#product-image-style")) return;
@@ -316,4 +391,5 @@ document.addEventListener("keydown", (event) => {
 });
 
 renderShopProducts();
+initShopPasswordGate();
 renderCart();

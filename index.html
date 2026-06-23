@@ -683,104 +683,128 @@
       </section>
 
       <section id="shop" class="section shop-band">
-        <div class="section-inner section-title-row">
-          <div>
-            <p class="eyebrow">Shop</p>
-            <h2>商品選購</h2>
+        <div class="section-inner shop-lock" data-shop-lock>
+          <div class="shop-lock-panel">
+            <p class="eyebrow">Private Shop</p>
+            <h2>商品頁密碼</h2>
+            <p class="lead">請輸入密碼後瀏覽商品及付款資料。</p>
+            <form class="shop-password-form" data-shop-password-form>
+              <label for="shop-password">密碼</label>
+              <div class="shop-password-row">
+                <input
+                  id="shop-password"
+                  type="password"
+                  autocomplete="current-password"
+                  data-shop-password-input
+                  placeholder="輸入密碼"
+                />
+                <button class="button primary" type="submit">進入商品頁</button>
+              </div>
+              <p class="shop-password-error" data-shop-password-error hidden>密碼不正確，請再試一次。</p>
+            </form>
           </div>
-          <button class="text-link text-button" type="button" data-open-cart>
-            查看購物車
-            <svg><use href="#icon-cart" /></svg>
-          </button>
         </div>
 
-        <div class="section-inner shop-layout">
-          <div class="product-grid" aria-label="可選購商品">
-            <article class="product-card">
-              <div class="product-image">
-                <img src="assets/products/dogcatstar-probiotics.jpg" alt="汪喵腸胃益生菌一盒30包" loading="lazy" />
-              </div>
-              <span class="product-type">汪喵星球</span>
-              <h3>汪喵 - 腸胃益生菌</h3>
-              <p>一盒30包 · 建議看門口，貓貓肚痾時用</p>
-              <strong>$169</strong>
-              <button type="button" class="button product-button" data-add-product data-name="汪喵 - 腸胃益生菌 一盒30包" data-price="169">
-                <svg><use href="#icon-plus" /></svg>
-                加入購物車
-              </button>
-            </article>
-            <article class="product-card">
-              <div class="product-image">
-                <img src="assets/products/dogcatstar-immune.png" alt="汪喵提升免疫力粉" loading="lazy" />
-              </div>
-              <span class="product-type">汪喵星球</span>
-              <h3>汪喵 - 提升免疫力粉</h3>
-              <p>適合幼/老貓/體質虛弱，健康貓日常營養補充</p>
-              <strong>$210</strong>
-              <button type="button" class="button product-button" data-add-product data-name="汪喵 - 提升免疫力粉" data-price="210">
-                <svg><use href="#icon-plus" /></svg>
-                加入購物車
-              </button>
-            </article>
-            <article class="product-card">
-              <div class="product-image">
-                <img src="assets/products/dogcatstar-taurine.jpg" alt="汪喵牛磺酸重要營養" loading="lazy" />
-              </div>
-              <span class="product-type">汪喵星球</span>
-              <h3>汪喵 - 牛磺酸（重要營養）</h3>
-              <p>自身無法產生，需要補充；視網膜、腦部、心臟與神經系統保健</p>
-              <strong>$78</strong>
-              <button type="button" class="button product-button" data-add-product data-name="汪喵 - 牛磺酸（重要營養）" data-price="78">
-                <svg><use href="#icon-plus" /></svg>
-                加入購物車
-              </button>
-            </article>
-            <article class="product-card">
-              <div class="product-image">
-                <img src="assets/products/dogcatstar-catsoup.jpg" alt="貓罐頭綜合口味一箱24罐" loading="lazy" />
-              </div>
-              <span class="product-type">貓罐頭</span>
-              <h3>貓罐頭 - 綜合口味</h3>
-              <p>一箱24罐</p>
-              <strong>$318</strong>
-              <button type="button" class="button product-button" data-add-product data-name="貓罐頭 - 綜合口味 一箱24罐" data-price="318">
-                <svg><use href="#icon-plus" /></svg>
-                加入購物車
-              </button>
-            </article>
-            <article class="product-card">
-              <div class="product-image">
-                <img src="assets/products/brabanconne-kitten.png" alt="Brabanconne幼貓雞肉味2.5kg" loading="lazy" />
-              </div>
-              <span class="product-type">Brabanconne</span>
-              <h3>Brabanconne 幼貓雞肉味</h3>
-              <p>2.5kg</p>
-              <strong>$220</strong>
-              <button type="button" class="button product-button" data-add-product data-name="Brabanconne 幼貓雞肉味 2.5kg" data-price="220">
-                <svg><use href="#icon-plus" /></svg>
-                加入購物車
-              </button>
-            </article>
+        <div data-shop-private hidden>
+          <div class="section-inner section-title-row">
+            <div>
+              <p class="eyebrow">Shop</p>
+              <h2>商品選購</h2>
+            </div>
+            <button class="text-link text-button" type="button" data-open-cart>
+              查看購物車
+              <svg><use href="#icon-cart" /></svg>
+            </button>
           </div>
 
-          <aside class="cart-panel" aria-label="購物車">
-            <div class="cart-panel-heading">
-              <h3>購物車</h3>
-              <span data-cart-count-label>0 件</span>
+          <div class="section-inner shop-layout">
+            <div class="product-grid" aria-label="可選購商品">
+              <article class="product-card">
+                <div class="product-image">
+                  <img src="assets/products/dogcatstar-probiotics.jpg" alt="汪喵腸胃益生菌一盒30包" loading="lazy" />
+                </div>
+                <span class="product-type">汪喵星球</span>
+                <h3>汪喵 - 腸胃益生菌</h3>
+                <p>一盒30包 · 建議看門口，貓貓肚痾時用</p>
+                <strong>$169</strong>
+                <button type="button" class="button product-button" data-add-product data-name="汪喵 - 腸胃益生菌 一盒30包" data-price="169">
+                  <svg><use href="#icon-plus" /></svg>
+                  加入購物車
+                </button>
+              </article>
+              <article class="product-card">
+                <div class="product-image">
+                  <img src="assets/products/dogcatstar-immune.png" alt="汪喵提升免疫力粉" loading="lazy" />
+                </div>
+                <span class="product-type">汪喵星球</span>
+                <h3>汪喵 - 提升免疫力粉</h3>
+                <p>適合幼/老貓/體質虛弱，健康貓日常營養補充</p>
+                <strong>$210</strong>
+                <button type="button" class="button product-button" data-add-product data-name="汪喵 - 提升免疫力粉" data-price="210">
+                  <svg><use href="#icon-plus" /></svg>
+                  加入購物車
+                </button>
+              </article>
+              <article class="product-card">
+                <div class="product-image">
+                  <img src="assets/products/dogcatstar-taurine.jpg" alt="汪喵牛磺酸重要營養" loading="lazy" />
+                </div>
+                <span class="product-type">汪喵星球</span>
+                <h3>汪喵 - 牛磺酸（重要營養）</h3>
+                <p>自身無法產生，需要補充；視網膜、腦部、心臟與神經系統保健</p>
+                <strong>$78</strong>
+                <button type="button" class="button product-button" data-add-product data-name="汪喵 - 牛磺酸（重要營養）" data-price="78">
+                  <svg><use href="#icon-plus" /></svg>
+                  加入購物車
+                </button>
+              </article>
+              <article class="product-card">
+                <div class="product-image">
+                  <img src="assets/products/dogcatstar-catsoup.jpg" alt="貓罐頭綜合口味一箱24罐" loading="lazy" />
+                </div>
+                <span class="product-type">貓罐頭</span>
+                <h3>貓罐頭 - 綜合口味</h3>
+                <p>一箱24罐</p>
+                <strong>$318</strong>
+                <button type="button" class="button product-button" data-add-product data-name="貓罐頭 - 綜合口味 一箱24罐" data-price="318">
+                  <svg><use href="#icon-plus" /></svg>
+                  加入購物車
+                </button>
+              </article>
+              <article class="product-card">
+                <div class="product-image">
+                  <img src="assets/products/brabanconne-kitten.png" alt="Brabanconne幼貓雞肉味2.5kg" loading="lazy" />
+                </div>
+                <span class="product-type">Brabanconne</span>
+                <h3>Brabanconne 幼貓雞肉味</h3>
+                <p>2.5kg</p>
+                <strong>$220</strong>
+                <button type="button" class="button product-button" data-add-product data-name="Brabanconne 幼貓雞肉味 2.5kg" data-price="220">
+                  <svg><use href="#icon-plus" /></svg>
+                  加入購物車
+                </button>
+              </article>
             </div>
-            <div class="cart-items" data-cart-items>
-              <p class="cart-empty">尚未選購項目</p>
-            </div>
-            <div class="cart-total">
-              <span>合計</span>
-              <strong data-cart-total>$0</strong>
-            </div>
-            <button class="button primary checkout-button" type="button" data-checkout disabled>
-              <svg><use href="#icon-cart" /></svg>
-              結帳 / 選擇付款方式
-            </button>
-            <p class="cart-hint">商品正式上架後，可加入購物車並選擇 PayMe、AlipayHK 或 FPS 付款。付款後請將付款截圖傳送到 WhatsApp 6157 5928，並附上姓名及所選商品。</p>
-          </aside>
+
+            <aside class="cart-panel" aria-label="購物車">
+              <div class="cart-panel-heading">
+                <h3>購物車</h3>
+                <span data-cart-count-label>0 件</span>
+              </div>
+              <div class="cart-items" data-cart-items>
+                <p class="cart-empty">尚未選購項目</p>
+              </div>
+              <div class="cart-total">
+                <span>合計</span>
+                <strong data-cart-total>$0</strong>
+              </div>
+              <button class="button primary checkout-button" type="button" data-checkout disabled>
+                <svg><use href="#icon-cart" /></svg>
+                結帳 / 選擇付款方式
+              </button>
+              <p class="cart-hint">商品正式上架後，可加入購物車並選擇 PayMe、AlipayHK 或 FPS 付款。付款後請將付款截圖傳送到 WhatsApp 6157 5928，並附上姓名及所選商品。</p>
+            </aside>
+          </div>
         </div>
       </section>
     </main>
