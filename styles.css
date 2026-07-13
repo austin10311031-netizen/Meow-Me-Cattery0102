@@ -221,17 +221,43 @@ svg {
 }
 
 .hero {
+  position: relative;
+  overflow: hidden;
   min-height: clamp(640px, 76svh, 900px);
   display: flex;
   align-items: center;
   padding: clamp(48px, 7vw, 96px) clamp(20px, 6vw, 78px);
-  background:
-    linear-gradient(90deg, rgba(247, 216, 213, 0.98) 0%, rgba(255, 247, 244, 0.94) 48%, rgba(255, 247, 244, 0.3) 74%),
-    url("assets/meowme-brand.jpeg") right 5% center / min(58vw, 660px) auto no-repeat,
-    var(--blush);
+  background: var(--blush);
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background: linear-gradient(90deg, rgba(247, 216, 213, 0.98) 0%, rgba(255, 247, 244, 0.94) 48%, rgba(255, 247, 244, 0.3) 74%);
+}
+
+.hero-video {
+  position: absolute;
+  top: 50%;
+  right: clamp(18px, 5vw, 76px);
+  z-index: 1;
+  display: block;
+  width: auto;
+  height: min(74svh, 760px);
+  max-width: min(42vw, 520px);
+  aspect-ratio: 9 / 16;
+  object-fit: contain;
+  object-position: center;
+  transform: translateY(-50%);
+  background: #fff;
 }
 
 .hero-copy {
+  position: relative;
+  z-index: 2;
   width: min(560px, 100%);
 }
 
@@ -1590,11 +1616,22 @@ h3 {
   .hero {
     min-height: auto;
     align-items: end;
-    padding-top: 286px;
-    background:
-      linear-gradient(180deg, rgba(247, 216, 213, 0.22) 0%, rgba(255, 247, 244, 0.86) 48%, rgba(255, 247, 244, 1) 100%),
-      url("assets/meowme-brand.jpeg") center 28px / min(92vw, 520px) auto no-repeat,
-      var(--blush);
+    padding-top: clamp(500px, 62vw, 540px);
+  }
+
+  .hero::before {
+    background: linear-gradient(180deg, rgba(247, 216, 213, 0.18) 0%, rgba(255, 247, 244, 0.86) 48%, rgba(255, 247, 244, 1) 100%);
+  }
+
+  .hero-video {
+    top: 24px;
+    right: auto;
+    left: 50%;
+    width: min(44vw, 260px);
+    height: auto;
+    max-width: none;
+    object-fit: contain;
+    transform: translateX(-50%);
   }
 
   h1 {
@@ -1698,7 +1735,12 @@ h3 {
   }
 
   .hero {
-    padding: 386px 18px 34px;
+    padding: clamp(386px, 118vw, 450px) 18px 34px;
+  }
+
+  .hero-video {
+    width: min(58vw, 220px);
+    height: auto;
   }
 
   h1 {
