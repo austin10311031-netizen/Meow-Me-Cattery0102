@@ -660,6 +660,17 @@ h3 {
   font-size: 1rem;
 }
 
+.support-summary-pill {
+  grid-column: 1 / -1;
+}
+
+.support-summary-pill span {
+  color: var(--ink);
+  font-size: clamp(1rem, 1.6vw, 1.22rem);
+  font-weight: 900;
+  line-height: 1.8;
+}
+
 .support-empty {
   min-height: 52svh;
   display: grid;
