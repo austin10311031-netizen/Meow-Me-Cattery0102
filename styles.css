@@ -737,7 +737,7 @@ h3 {
 }
 
 .instagram-band {
-  background: #fff7f4;
+  background: linear-gradient(180deg, #f7d8d5 0%, #fff7f4 36%, #f8dfdc 100%);
 }
 
 .grooming-band {
